@@ -4,8 +4,9 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 var file = 'index.html';
-var buffer = fs.readFile(file);
-var output = buf.toString(buffer);
+var buf = new Buffer(16);
+buf = fs.readFile(file);
+var output = buf.toString(buf);
 
 app.get('/', function(request, response) {
   response.send(output);
